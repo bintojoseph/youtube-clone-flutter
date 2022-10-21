@@ -8,9 +8,41 @@ class ScreenMainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SafeArea(
+    return Scaffold(
+      body: const SafeArea(
         child: ScreenHome(),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        currentIndex: 1,
+        backgroundColor: Colors.black,
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.grey,
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home_filled),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.air),
+            label: 'shorts',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.add_circle_outline,
+              size: 40,
+            ),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.subscriptions),
+            label: 'subscriptions',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.library_books),
+            label: 'Library',
+          ),
+        ],
       ),
     );
   }

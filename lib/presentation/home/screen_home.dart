@@ -9,7 +9,7 @@ class ScreenHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar:  PreferredSize(child: AppbarWidget(), preferredSize: Size.fromHeight(50)),
+      appBar:  PreferredSize(preferredSize: Size.fromHeight(50),child: AppbarWidget(),),
     );
   }
 }
