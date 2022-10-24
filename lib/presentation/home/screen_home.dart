@@ -74,7 +74,7 @@ class HomeListWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: const [
                     SizedBox(
-                      width: 300,
+                      width: 290,
                       child: Text(
                         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s',
                         overflow: TextOverflow.clip,
@@ -84,12 +84,34 @@ class HomeListWidget extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Text("Moto GP . 300K views . 2 months ago",style: TextStyle(color: Colors.grey,),),
+                    Text(
+                      "Moto GP . 300K views . 2 months ago",
+                      style: TextStyle(
+                        color: Colors.grey,
+                      ),
+                    ),
                   ],
                 ),
-                const Icon(
-                  Icons.more_vert,
-                  color: Colors.white,
+                SizedBox(
+                  width: 5,
+                  child: PopupMenuButton(
+                    position: PopupMenuPosition.over,
+                    icon: const Icon(
+                      Icons.more_vert,
+                      color: Colors.white,
+                    ),
+                    iconSize: 25,
+                    itemBuilder: (context) => [
+                      const PopupMenuItem(
+                        value: 0,
+                        child: Text('Save to watch later'),
+                      ),
+                      const PopupMenuItem(
+                        value: 0,
+                        child: Text('Save to playlist'),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
