@@ -74,7 +74,7 @@ class HomeListWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: const [
                     SizedBox(
-                      width: 290,
+                      width: 300,
                       child: Text(
                         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s',
                         overflow: TextOverflow.clip,
@@ -95,22 +95,23 @@ class HomeListWidget extends StatelessWidget {
                 SizedBox(
                   width: 5,
                   child: PopupMenuButton(
-                    position: PopupMenuPosition.over,
-                    icon: const Icon(
-                      Icons.more_vert,
-                      color: Colors.white,
-                    ),
-                    iconSize: 25,
+                    //splashRadius: 30,
+                    //position: PopupMenuPosition.over,
+                    //iconSize: 25,
+                    color: Colors.black,
+                    padding: const EdgeInsets.all(0.0),
+                    enableFeedback: true,
                     itemBuilder: (context) => [
                       const PopupMenuItem(
                         value: 0,
-                        child: Text('Save to watch later'),
+                        child: Text('Save to watch later',style: TextStyle(color: Colors.white,),),
                       ),
                       const PopupMenuItem(
                         value: 0,
-                        child: Text('Save to playlist'),
+                        child: Text('Save to playlist',style: TextStyle(color: Colors.white,),),
                       ),
                     ],
+                    child: const Icon(Icons.more_vert),
                   ),
                 ),
               ],
