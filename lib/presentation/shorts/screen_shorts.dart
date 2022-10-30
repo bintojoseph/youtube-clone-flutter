@@ -17,54 +17,94 @@ class ScreenShorts extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: const [
-                      Icon(
-                        Icons.search,
-                        color: kwhite,
-                        size: kIconSize,
-                      ),
-                      kWidth,
-                      Icon(
-                        Icons.camera_alt_outlined,
-                        color: kwhite,
-                        size: kIconSize,
-                      ),
-                      kWidth,
-                    ],
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: const [
+                  Icon(
+                    Icons.search,
+                    color: kwhite,
+                    size: kIconSize,
                   ),
-                  Align(
-                    alignment: Alignment.bottomCenter,
-                    child: Row(
-                      children: [
-                        Row(
-                          children: [
-                            Container(
-                              height: 40,
-                              width: 40,
-                              decoration: const BoxDecoration(
-                                color: Colors.blue,
-                                borderRadius: BorderRadius.all(Radius.circular(30)),
-                              ),
-                              child: const Icon(
-                                Icons.person_rounded,
-                                size: 30,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
+                  kWidth,
+                  Icon(
+                    Icons.camera_alt_outlined,
+                    color: kwhite,
+                    size: kIconSize,
+                  ),
+                  kWidth,
+                ],
+              ),
+            ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                color: Colors.amber,
+                child: Row(
+                  children: [
+                    Container(
+                      height: 40,
+                      width: 40,
+                      decoration: const BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.all(Radius.circular(30)),
+                      ),
+                      child: const Icon(
+                        Icons.person_rounded,
+                        size: 30,
+                      ),
                     ),
-                  ),
+                    kWidth,
+                    const Text('Username'),
+                    kWidth,
+                    TextButton(
+                      onPressed: () {},
+                      style: ButtonStyle(
+                        padding: MaterialStateProperty.all(
+                            const EdgeInsetsDirectional.all(8)),
+                        backgroundColor: MaterialStateProperty.all(
+                            const Color.fromARGB(255, 255, 0, 0)),
+                      ),
+                      child: const Text(
+                        'SUBSCRIBE',
+                        style: TextStyle(color: kwhite),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+            Align(
+              alignment: Alignment.bottomRight,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children:  const [
+                  VideoActionWidget(),
+                  
                 ],
               ),
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class VideoActionWidget extends StatelessWidget {
+  const VideoActionWidget({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+      child: Column(
+        children: const [
+          Icon(Icons.thumb_up,color: kwhite,size: kIconSize,),
+          Text('1M')
+        ],
       ),
     );
   }
